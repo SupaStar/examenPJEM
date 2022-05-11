@@ -64,8 +64,7 @@ class UsuarioController extends Controller
                 return response()->json(['estado' => false, 'detalle' => 'Usuario inactivo']);
             } else{
             if (Hash::check($request->password, $usuario->password)) {
-                $idU=Auth::user()->id;
-                return response()->json(['estado' => true, 'detalle' => 'Usuario autenticado correctamente'+$idU]);
+                return response()->json(['estado' => true, 'detalle' => 'Usuario autenticado correctamente']);
             }
 
             else {
